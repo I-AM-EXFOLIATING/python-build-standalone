@@ -24,6 +24,7 @@ def bootstrap():
 
     venv.create(VENV, with_pip=True)
 
+    subprocess.run([str(PIP), "install", "--upgrade", "pip", "wheel"])
     subprocess.run([str(PIP), "install", "-r", str(REQUIREMENTS)], check=True)
 
     os.environ["PYBUILD_BOOTSTRAPPED"] = "1"
